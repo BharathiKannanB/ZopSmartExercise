@@ -1,0 +1,6 @@
+"Status","Name","Duration in ms","Description"
+"passed","UbiSoft Visual regression.""before all"" hook","19190",""
+"failed","UbiSoft Visual regression.Failed test case","2587",""
+"passed","UbiSoft Visual regression.Check Game Overview Section","2626",""
+"passed","UbiSoft Visual regression.Check Available Now Section","3336",""
+"passed","UbiSoft Visual regression.Check sliding image","2193",""

@@ -1,0 +1,51 @@
+[ {
+  "uid" : "3caeed3fc05d719c",
+  "name" : "Check Available Now Section",
+  "time" : {
+    "start" : 1546616623785,
+    "stop" : 1546616627121,
+    "duration" : 3336
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4f8144c75d282ddd",
+  "name" : "\"before all\" hook",
+  "time" : {
+    "start" : 1546616604595,
+    "stop" : 1546616623785,
+    "duration" : 19190
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e9dc340c711fa0d1",
+  "name" : "Check Game Overview Section",
+  "time" : {
+    "start" : 1546616627125,
+    "stop" : 1546616629751,
+    "duration" : 2626
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "178f10dd7da3098a",
+  "name" : "Failed test case",
+  "time" : {
+    "start" : 1546616631945,
+    "stop" : 1546616634532,
+    "duration" : 2587
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "71b7fde9cf353ba",
+  "name" : "Check sliding image",
+  "time" : {
+    "start" : 1546616629752,
+    "stop" : 1546616631945,
+    "duration" : 2193
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

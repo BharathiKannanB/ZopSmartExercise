@@ -1,0 +1,69 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "\"before all\" hook",
+    "uid" : "4f8144c75d282ddd",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1546616604595,
+      "stop" : 1546616623785,
+      "duration" : 19190
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "0-2",
+    "children" : [ {
+      "name" : "Failed test case",
+      "uid" : "178f10dd7da3098a",
+      "parentUid" : "880a094af3dffab161e2023284569d6f",
+      "status" : "failed",
+      "time" : {
+        "start" : 1546616631945,
+        "stop" : 1546616634532,
+        "duration" : 2587
+      },
+      "flaky" : true,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Check Game Overview Section",
+      "uid" : "e9dc340c711fa0d1",
+      "parentUid" : "880a094af3dffab161e2023284569d6f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1546616627125,
+        "stop" : 1546616629751,
+        "duration" : 2626
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Check Available Now Section",
+      "uid" : "3caeed3fc05d719c",
+      "parentUid" : "880a094af3dffab161e2023284569d6f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1546616623785,
+        "stop" : 1546616627121,
+        "duration" : 3336
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Check sliding image",
+      "uid" : "71b7fde9cf353ba",
+      "parentUid" : "880a094af3dffab161e2023284569d6f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1546616629752,
+        "stop" : 1546616631945,
+        "duration" : 2193
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "880a094af3dffab161e2023284569d6f"
+  } ]
+}

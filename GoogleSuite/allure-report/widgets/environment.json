@@ -1,0 +1,7 @@
+[ {
+  "values" : [ "{\"maxInstances\":3,\"browserName\":\"chrome\"}" ],
+  "name" : "capabilities"
+}, {
+  "values" : [ "[\"D:\\\\WebdriverIO\\\\FunctionalTesing\\\\test\\\\test.js\"]" ],
+  "name" : "spec files"
+} ]

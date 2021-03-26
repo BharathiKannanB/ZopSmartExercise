@@ -4,6 +4,7 @@ import SearchLandingPage from'../pageobject/SearchLandingPage';
 // Testcase 08 - To validate positve edge case for word Limit in GoogleHomePage Search box
 
 describe('Testcase 08 Positve Edgecase functionality', function() {
+try {
     before(function()
     {
         HomePage.OpenURL();
@@ -18,14 +19,19 @@ describe('Testcase 08 Positve Edgecase functionality', function() {
     }),
     it('Validate Search Result', function () {
         const result= SearchLandingPage.searchResult().getText();
+        browser.saveScreenshot('./screenshot/screen/Testcase08.png');
         assert.strictEqual(result, "Apple (India)");
+        console.log("Positive Edge case validated");
     }),
-    
+   } catch (error) {
+    console.log(error.name);
+} 
 });
 
 // Testcase 09 - To validate negative edge case for word Limit in GoogleHomePage Search box
 
 describe('Testcase 09 Negative Edgecase functionality', function() {
+try {
     before(function()
     {
         HomePage.OpenURL();
@@ -40,7 +46,11 @@ describe('Testcase 09 Negative Edgecase functionality', function() {
     }),
     it('Validate Search Result', function () {
         const result= SearchLandingPage.ErrorMessage().getText();
+        browser.saveScreenshot('./screenshot/screen/Testcase09.png');
         assert.strictEqual(result, ""Apple" (and any subsequent words) was ignored because we limit queries to 32 words.");
+        console.log("Negative Edge case validated");
     }),
-    
+    } catch (error) {
+    console.log(error.name);
+}
 });

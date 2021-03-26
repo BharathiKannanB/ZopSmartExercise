@@ -1,0 +1,46 @@
+import HomePage from'../pageobject/HomePage';
+import SearchLandingPage from'../pageobject/SearchLandingPage';
+
+// Testcase 08 - To validate positve edge case for word Limit in GoogleHomePage Search box
+
+describe('Testcase 08 Positve Edgecase functionality', function() {
+    before(function()
+    {
+        HomePage.OpenURL();
+    }),
+    it('Enter SearchBox', function () {
+        HomePage.SearchBox().setValue("Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple 
+        Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple
+        Apple Apple Apple Apple Apple Apple Apple Apple");                                                          // 32 words are maximum allowed
+    }),
+    it('Click Search Button', function () {
+        HomePage.SearchButton().click();
+    }),
+    it('Validate Search Result', function () {
+        const result= SearchLandingPage.searchResult().getText();
+        assert.strictEqual(result, "Apple (India)");
+    }),
+    
+});
+
+// Testcase 09 - To validate negative edge case for word Limit in GoogleHomePage Search box
+
+describe('Testcase 09 Negative Edgecase functionality', function() {
+    before(function()
+    {
+        HomePage.OpenURL();
+    }),
+    it('Enter SearchBox', function () {
+        HomePage.SearchBox().setValue("Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple 
+        Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple
+        Apple Apple Apple Apple Apple Apple Apple Apple Apple");                                                          // 33 words exceeds the allowed limit
+    }),
+    it('Click Search Button', function () {
+        HomePage.SearchButton().click();
+    }),
+    it('Validate Search Result', function () {
+        const result= SearchLandingPage.ErrorMessage().getText();
+        assert.strictEqual(result, ""Apple" (and any subsequent words) was ignored because we limit queries to 32 words.");
+    }),
+    
+});

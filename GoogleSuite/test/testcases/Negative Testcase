@@ -1,0 +1,38 @@
+import HomePage from'../pageobject/HomePage';
+import SearchLandingPage from'../pageobject/SearchLandingPage';
+
+// Testcase 06 - To validate invalid data in GoogleHomePage SearchBox
+
+describe('Testcase 06 Invalid Data', function() {
+    before(function()
+    {
+        HomePage.OpenURL();
+    }),
+    it('Enter SearchBox', function () {
+        HomePage.SearchBox().setValue("+++++++");
+    }),
+    it('Click Search Button', function () {
+        HomePage.SearchButton().click();
+    }),
+    it('Validate Invalid Search Result', function () {
+        const result= SearchLandingPage.ErrorMessage().getText();
+        assert.strictEqual(result, "Your search - +++++++ - did not match any documents.");
+    }),
+});
+
+// Testcase 07 - To validate null data in GoogleHomePage SearchBox
+
+describe('Testcase 07 null Data', function() {
+    before(function()
+    {
+        HomePage.OpenURL();
+    }),
+    
+    it('Click Search Button', function () {
+        HomePage.SearchButton().click();
+    }),
+    it('Validate null Search Result', function () {
+        const result= browser.getTitle();
+        assert.strictEqual(result, "http://www.google.co.in/");
+    }),
+});

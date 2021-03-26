@@ -4,6 +4,8 @@ import SearchLandingPage from'../pageobject/SearchLandingPage';
 // Testcase 10 - To validate the performance by checking the search results response time against the SLA.(2 secs assumed here)
 
 describe('Testcase 10 Search functionality performance', function() {
+try {
+  
     before(function()
     {
         HomePage.OpenURL();
@@ -21,4 +23,7 @@ describe('Testcase 10 Search functionality performance', function() {
         if(finalresult < 2)
         console.log("Search functionality performance validated");
     }),
+} catch (error) {
+    console.log(error.name);
+}
 });

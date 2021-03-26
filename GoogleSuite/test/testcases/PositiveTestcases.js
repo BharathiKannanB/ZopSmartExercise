@@ -1,6 +1,7 @@
 import HomePage from'../pageobject/HomePage';
+import SearchLandingPage from'../pageobject/SearchLandingPage';
 
-// Testcase 01 - To verify and validate the functionality of search in GoogleHomePage
+// Testcase 01 - To verify and validate the Search functionality in GoogleHomePage
 
 describe('Testcase 01 Search functionality', function() {
     before(function()
@@ -10,15 +11,30 @@ describe('Testcase 01 Search functionality', function() {
     it('Enter SearchBox', function () {
         HomePage.SearchBox().setValue("Apple");
     }),
-    it('Check Game Overview Section', function () {
-        Loginpage.CheckGameOverviewSection();
+    it('Click Search Button', function () {
+        HomePage.SearchButton().click();
     }),
-    it('Check sliding image', function () {
-        Loginpage.CheckSlidingImage();
+    it('Validate Search Result', function () {
+        const result= HomePage.searchResult().getText();
+        assert.strictEqual(result, "Apple (India)");
     }),
-    it('Failed test case', function () {
-       var result= Loginpage.CheckGameOverviewSection();
-       console.log(result[0].isSameDimensions);
-       expect(result[0].isSameDimensions).to.be.true;
-    });
+});
+    
+   // Testcase 02 - To verify and validate the I'm Feeling Lucky functionality in GoogleHomePage
+
+describe('Testcase 02 - I'm Feeling Lucky functionality', function() {
+    before(function()
+    {
+        HomePage.OpenURL();
+    }),
+    it('Enter SearchBox', function () {
+        HomePage.SearchBox().setValue("Apple");
+    }),
+    it('Click I'm Feeling Lucky Button', function () {
+        HomePage.FeelingLuckyButton().click();
+    }),
+    it('Validate Search Result', function () {
+        const result= HomePage.searchResult().getText();
+        assert.strictEqual(result, "Apple (India)");
+    }),
 });

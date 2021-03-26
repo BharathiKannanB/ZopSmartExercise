@@ -15,7 +15,7 @@ describe('Testcase 01 Search functionality', function() {
         HomePage.SearchButton().click();
     }),
     it('Validate Search Result', function () {
-        const result= HomePage.searchResult().getText();
+        const result= SearchLandingPage.searchResult().getText();
         assert.strictEqual(result, "Apple (India)");
     }),
 });

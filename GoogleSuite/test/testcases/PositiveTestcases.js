@@ -34,7 +34,23 @@ describe('Testcase 02 - I'm Feeling Lucky functionality', function() {
         HomePage.FeelingLuckyButton().click();
     }),
     it('Validate Search Result', function () {
-        const result= HomePage.searchResult().getText();
-        assert.strictEqual(result, "Apple (India)");
+        const result= browser.getTitle();
+        assert.strictEqual(result, "https://www.apple.com/in/");
+    }),
+});
+
+ // Testcase 03 - To verify and validate language change functionality in GoogleHomePage
+
+describe('Testcase 03 - Language UI functionality', function() {
+    before(function()
+    {
+        HomePage.OpenURL();
+    }),
+    it('Click Language Button', function () {
+        HomePage.LanguageButton().click();
+    }),
+    it('Validate Language', function () {
+        const result=  HomePage.LanguageButton().getText();
+        assert.strictEqual(result, "English");
     }),
 });

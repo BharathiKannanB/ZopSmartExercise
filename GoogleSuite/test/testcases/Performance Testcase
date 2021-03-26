@@ -17,7 +17,7 @@ describe('Testcase 10 Search functionality performance', function() {
     it('Validate Search Result', function () {
         const result= SearchLandingPage.PerformanceStat().getText();
         const finalresult = result.replace(/\D/g,'');
-        browser.saveScreenshot('./some/path/screenshot.png');
+        browser.saveScreenshot('./screenshot/screen/Testcase10.png');
         if(finalresult < 2)
         console.log("Search functionality performance validated");
     }),

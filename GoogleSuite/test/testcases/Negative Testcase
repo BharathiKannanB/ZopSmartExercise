@@ -4,6 +4,7 @@ import SearchLandingPage from'../pageobject/SearchLandingPage';
 // Testcase 06 - To validate invalid data in GoogleHomePage SearchBox
 
 describe('Testcase 06 Invalid Data', function() {
+try {
     before(function()
     {
         HomePage.OpenURL();
@@ -16,12 +17,17 @@ describe('Testcase 06 Invalid Data', function() {
     }),
     it('Validate Invalid Search Result', function () {
         const result= SearchLandingPage.ErrorMessage().getText();
+        browser.saveScreenshot('./screenshot/screen/Testcase06.png');
         assert.strictEqual(result, "Your search - +++++++ - did not match any documents.");
+        console.log("Invalid data validated");
     }),
+    } catch (error) {
+    console.log(error.name);
+}
 });
 
 // Testcase 07 - To validate null data in GoogleHomePage SearchBox
-
+try {
 describe('Testcase 07 null Data', function() {
     before(function()
     {
@@ -33,6 +39,11 @@ describe('Testcase 07 null Data', function() {
     }),
     it('Validate null Search Result', function () {
         const result= browser.getTitle();
+        browser.saveScreenshot('./screenshot/screen/Testcase07.png');
         assert.strictEqual(result, "http://www.google.co.in/");
+        console.log("null data validated");
     }),
+    } catch (error) {
+    console.log(error.name);
+}
 });

@@ -13,6 +13,10 @@ class SearchLandingPage {
     
      get searchResult() 
     {return $("//h3[text()='Apple (India)']");}
+  
+    get getTitle() 
+    {return browser.getTitle()}
+  
 
 }
 

@@ -1,0 +1,24 @@
+import HomePage from'../pageobject/HomePage';
+import SearchLandingPage from'../pageobject/SearchLandingPage';
+
+// Testcase 10 - To validate the performance by checking the search results response time against the SLA.(2 secs assumed here)
+
+describe('Testcase 10 Search functionality performance', function() {
+    before(function()
+    {
+        HomePage.OpenURL();
+    }),
+    it('Enter SearchBox', function () {
+        HomePage.SearchBox().setValue("Apple");
+    }),
+    it('Click Search Button', function () {
+        HomePage.SearchButton().click();
+    }),
+    it('Validate Search Result', function () {
+        const result= SearchLandingPage.PerformanceStat().getText();
+        const finalresult = result.replace(/\D/g,'');
+        browser.saveScreenshot('./some/path/screenshot.png');
+        if(finalresult < 2)
+        console.log("Search functionality performance validated");
+    }),
+});
